@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-source script-vars.sh
+. ./script-vars.sh
 
 DISK=$1
 PARTED="parted --align optimal --script $DISK"
