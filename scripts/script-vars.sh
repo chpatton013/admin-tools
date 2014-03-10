@@ -1,3 +1,0 @@
-RAID_DEVICE=/dev/md0
-LUKS_DEVICE=storage
-MOUNT_POINT=/mnt/$LUKS_DEVICE
