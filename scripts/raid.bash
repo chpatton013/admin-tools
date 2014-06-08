@@ -41,17 +41,16 @@ dryrun=''
  #
  # Add a disk to the array:
  #    raid.bash start
- #    raid.bash mount
+ #    < optionally, > raid.bash mount
  #    raid.bash add_disk /dev/sdX
  #
  # Remove a disk from the array:
  #    raid.bash start
- #    raid.bash mount
+ #    < optionally, > raid.bash mount
  #    raid.bash remove_disk /dev/sdX
  #
  # Grow the size of the array:
  #    raid.bash start
- #    raid.bash mount
  #    raid.bash add_disk /dev/sdX
  #    raid.bash remove_bitmap
  #    raid.bash resize_raid
@@ -272,7 +271,7 @@ case "$command" in
    ;;
 'resize_luks')
    _verify "Resizing luks device '$luks_device' on raid device '$raid_device'."
-   _grow_luks "$raid_device" "$luks_device"
+   _resize_luks "$raid_device" "$luks_device"
    ;;
 'resize_volume')
    _verify "Resizing filesystem on luks device '$luks_device'."
